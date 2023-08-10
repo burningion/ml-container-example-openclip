@@ -1,0 +1,2 @@
+docker build . -t clip-container
+docker run -it --gpus 'all,"capabilities=compute,graphics,display,utility,video"' --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -v .:/app -v ~/.cache:/root/.cache clip-container bash
